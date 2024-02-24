@@ -1,16 +1,39 @@
-# mobile_project1
+# Expense Tracker Application
 
-A new Flutter project for Mobile Project 1 CSC4360 by Sophie Nguyen and Armaan Hirani.
+## Overview
+Welcome to the Expense Tracker Application project repository! This project aims to develop a user-friendly mobile application that empowers individuals to efficiently track their expenses and manage their budgets effectively. The Expense Tracker Application provides a comprehensive financial management solution by integrating features such as expense categorization, budget goal setting, and visual reporting.
 
-## Getting Started
+## Project Proposal
+Please refer to the [Project Proposal](https://drive.google.com/file/d/1ZCvng3cCCDchbiO5DMv8Z8BEAj_ptnc5/view?usp=sharing) file for detailed information about the project summary, purpose, target audience, potential benefits to users, tech stack, proposed wireframe, iterative design approach, key features, complexity, and the signed proposal.
 
-This project is a starting point for a Flutter application.
+## Tech Stack
+- **Flutter**: Dart-based framework for building cross-platform mobile applications.
+- **SQLite**: Local database for data storage on mobile devices.
+- **Flutter Charts**: Library for integrating visual charts into Flutter apps.
+- **Git**: Version control system for collaboration and code management.
+- **Code Editors and IDEs**: Visual Studio Code, Android Studio, Xcode, etc.
+- **Testing Frameworks**: XCTest for iOS, Espresso for Android.
 
-A few resources to get you started if this is your first Flutter project:
+## Key Features
+- **Expense Categorization**: Users can categorize expenses into customizable categories for better organization and analysis.
+- **Budget Goal Setting**: Enable users to set monthly or periodic budget limits for overall spending to promote better financial planning.
+- **Visual Reporting**: Generate insightful visual reports and charts to provide users with a comprehensive overview of their spending habits.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Usage
+1. Clone the repository to your local machine.
+2. Open the project in your preferred code editor or IDE.
+3. Follow the this [CONTRIBUTING](https://github.com/CSC4360Spring2024/Project1/blob/main/CONTRIBUTING.md).
+4. Start developing features or fixing issues based on the project requirements.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributing
+We welcome contributions from the community! If you'd like to contribute to the Expense Tracker Application project, please follow this [CONTRIBUTING](https://github.com/CSC4360Spring2024/Project1/blob/main/CONTRIBUTING.md).
+
+## License
+This project is licensed under the [LICENSE](https://github.com/CSC4360Spring2024/Project1/blob/main/LICENSE).
+
+## Contact
+For any inquiries or suggestions regarding the Expense Tracker Application project, please contact:
+
+- Sophie Nguyen: [nnguyen177@student.gsu.edu](mailto:nnguyen177@student.gsu.edu)
+
+Thank you for your interest in our project! We look forward to your contributions and feedback. Happy coding! 🚀
