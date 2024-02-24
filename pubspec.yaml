@@ -1,5 +1,5 @@
 name: mobile_project1
-description: "A new Flutter project for Mobile Project 1 CSC4360 by Sophie Nguyen and Armaan Hirani."
+description: "A user-friendly mobile app for efficiently tracking expenses and managing budgets. Features include expense categorization, budget goal setting, and visual reporting."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
