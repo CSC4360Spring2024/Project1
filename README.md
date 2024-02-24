@@ -14,6 +14,12 @@ Please refer to the [Project Proposal](https://drive.google.com/file/d/1ZCvng3cC
 - **Code Editors and IDEs**: Visual Studio Code, Android Studio, Xcode, etc.
 - **Testing Frameworks**: XCTest for iOS, Espresso for Android.
 
+## Project Details
+- [**Google Drive**](https://drive.google.com/drive/folders/1pYyoua2EAXnyyNQ7c07HI2vI_Lqmipje?usp=sharing)
+- [**APK File**](): (update later)
+- [**PowerPoint Presentation**](https://docs.google.com/presentation/d/17WJnkJnWfcXv93oxpsV9CiSMbfw1Va6S/edit?usp=sharing&ouid=115063291951967236235&rtpof=true&sd=true): (just a template so far)
+- [**Youtube Video**](): (update later)
+
 ## Key Features
 - **Expense Categorization**: Users can categorize expenses into customizable categories for better organization and analysis.
 - **Budget Goal Setting**: Enable users to set monthly or periodic budget limits for overall spending to promote better financial planning.
