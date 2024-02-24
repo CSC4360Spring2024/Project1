@@ -19,12 +19,6 @@ Please refer to the [Project Proposal](https://drive.google.com/file/d/1ZCvng3cC
 - **Budget Goal Setting**: Enable users to set monthly or periodic budget limits for overall spending to promote better financial planning.
 - **Visual Reporting**: Generate insightful visual reports and charts to provide users with a comprehensive overview of their spending habits.
 
-## Usage
-1. Clone the repository to your local machine.
-2. Open the project in your preferred code editor or IDE.
-3. Follow the this [CONTRIBUTING](https://github.com/CSC4360Spring2024/Project1/blob/main/CONTRIBUTING.md).
-4. Start developing features or fixing issues based on the project requirements.
-
 ## Contributing
 We welcome contributions from the community! If you'd like to contribute to the Expense Tracker Application project, please follow this [CONTRIBUTING](https://github.com/CSC4360Spring2024/Project1/blob/main/CONTRIBUTING.md).
 
