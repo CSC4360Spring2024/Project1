@@ -77,4 +77,10 @@ class DatabaseHelper {
     List<Budget> budgetList = result.map((item) => Budget.fromMap(item)).toList();
     return budgetList;
   }
+
+  Future<int> deleteExpense(int id) async {
+    Database db = await this.database;
+    return await db.delete(expenseTable, where: '$colId = ?', whereArgs: [id]);
+  }
+
 }
