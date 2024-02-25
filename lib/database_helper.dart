@@ -2,17 +2,22 @@ import 'dart:async';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'expense_model.dart';
+import 'budget_model.dart';
 
 class DatabaseHelper {
   static DatabaseHelper? _databaseHelper;
   static Database? _database;
 
   String expenseTable = 'expense_table';
+  String budgetTable = 'budget_table';
   String colId = 'id';
   String colAmount = 'amount';
   String colDate = 'date';
   String colCategory = 'category';
   String colNotes = 'notes';
+  String colTitle = 'title';
+  String colStartDate = 'start_date';
+  String colEndDate = 'end_date';
 
   DatabaseHelper._();
 
@@ -41,6 +46,9 @@ class DatabaseHelper {
     await db.execute(
         'CREATE TABLE $expenseTable($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colAmount REAL, $colDate TEXT, '
             '$colCategory TEXT, $colNotes TEXT)');
+    await db.execute(
+        'CREATE TABLE $budgetTable($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colTitle TEXT, $colAmount REAL, '
+            '$colStartDate TEXT, $colEndDate TEXT)');
   }
 
   Future<int> insertExpense(Expense expense) async {
@@ -55,5 +63,18 @@ class DatabaseHelper {
     List<Expense> expenseList =
     result.map((item) => Expense.fromMap(item)).toList();
     return expenseList;
+  }
+
+  Future<int> insertBudget(Budget budget) async {
+    Database db = await this.database;
+    var result = await db.insert(budgetTable, budget.toMap());
+    return result;
+  }
+
+  Future<List<Budget>> getBudgetList() async {
+    Database db = await this.database;
+    var result = await db.query(budgetTable);
+    List<Budget> budgetList = result.map((item) => Budget.fromMap(item)).toList();
+    return budgetList;
   }
 }
