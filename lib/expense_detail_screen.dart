@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'database_helper.dart';
-import 'expense_model.dart';
+import 'database/database_helper.dart';
+import 'models/expense_model.dart';
+import 'controllers/expense_detail_controller.dart';
 
 class ExpenseDetailScreen extends StatelessWidget {
   final Expense expense;
-  final DatabaseHelper _dbHelper = DatabaseHelper();
+  final ExpenseDetailController _controller;
 
-  ExpenseDetailScreen({required this.expense});
+  ExpenseDetailScreen({required this.expense})
+      : _controller = ExpenseDetailController(expense: expense);
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +46,13 @@ class ExpenseDetailScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    _navigateToEditExpenseScreen(context);
+                    _controller.navigateToEditExpenseScreen(context);
                   },
                   child: Text('Edit'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    _deleteExpense(context);
+                    _controller.deleteExpense(context);
                   },
                   child: Text('Delete'),
                 ),
@@ -58,43 +60,6 @@ class ExpenseDetailScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  void _navigateToEditExpenseScreen(BuildContext context) {
-    // You can implement navigation to the edit expense screen here
-    // For example:
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) => EditExpenseScreen(expense: expense),
-    //   ),
-    // );
-  }
-
-  void _deleteExpense(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text('Delete Expense'),
-        content: Text('Are you sure you want to delete this expense?'),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text('Cancel'),
-          ),
-          TextButton(
-            onPressed: () async {
-              await _dbHelper.deleteExpense(expense.id!);
-              Navigator.pop(context);
-              Navigator.pop(context); // Pop twice to go back to the previous screen
-            },
-            child: Text('Delete'),
-          ),
-        ],
       ),
     );
   }
