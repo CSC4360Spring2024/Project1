@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../database/database_helper.dart';
+import '../database/expense_database_helper.dart';
 import '../models/expense_model.dart';
 
 class ExpenseEntryController {
@@ -7,7 +7,7 @@ class ExpenseEntryController {
   DateTime selectedDate = DateTime.now();
   String selectedCategory = 'Food'; // Set an initial value
   final TextEditingController notesController = TextEditingController();
-  final dbHelper = DatabaseHelper();
+  final dbHelper = ExpenseDatabaseHelper();
 
   Future<void> selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(

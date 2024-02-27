@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-import '../database/database_helper.dart';
+import '../database/expense_database_helper.dart';
 import '../models/expense_model.dart';
 import '../expense_detail_screen.dart';
 
 class ReportsAndChartsController {
   List<Expense> expenseList = [];
-  final dbHelper = DatabaseHelper();
+  final dbHelper = ExpenseDatabaseHelper();
 
   Future<void> getExpenses() async {
     List<Expense> expenses = await dbHelper.getExpenseList();
