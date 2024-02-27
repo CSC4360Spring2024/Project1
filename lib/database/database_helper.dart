@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'expense_model.dart';
-import 'budget_model.dart';
+import '../models/expense_model.dart';
+import '../models/budget_model.dart';
 
 class DatabaseHelper {
   static DatabaseHelper? _databaseHelper;
