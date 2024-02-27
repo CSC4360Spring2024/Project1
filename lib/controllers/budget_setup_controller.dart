@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../database/database_helper.dart';
+import '../database/budget_database_helper.dart';
 import '../models/budget_model.dart';
 
 class BudgetSetupController {
@@ -7,7 +7,7 @@ class BudgetSetupController {
   final TextEditingController amountController = TextEditingController();
   DateTime startDate = DateTime.now();
   DateTime endDate = DateTime.now().add(Duration(days: 30)); // Default to 30 days from now
-  final DatabaseHelper dbHelper = DatabaseHelper();
+  final BudgetDatabaseHelper dbHelper = BudgetDatabaseHelper();
 
   Future<void> selectStartDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(

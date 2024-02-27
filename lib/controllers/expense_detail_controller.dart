@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../database/database_helper.dart';
+import '../database/expense_database_helper.dart';
 import '../models/expense_model.dart';
 
 class ExpenseDetailController {
   final Expense expense;
-  final DatabaseHelper _dbHelper = DatabaseHelper();
+  final ExpenseDatabaseHelper _dbHelper = ExpenseDatabaseHelper();
 
   ExpenseDetailController({required this.expense});
 
