@@ -4,20 +4,10 @@ import '../models/expense_model.dart';
 
 class ExpenseDetailController {
   final Expense expense;
+  final VoidCallback updateExpenses; // Callback function for updating expenses
   final ExpenseDatabaseHelper _dbHelper = ExpenseDatabaseHelper();
 
-  ExpenseDetailController({required this.expense});
-
-  void navigateToEditExpenseScreen(BuildContext context) {
-    // You can implement navigation to the edit expense screen here
-    // For example:
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) => EditExpenseScreen(expense: expense),
-    //   ),
-    // );
-  }
+  ExpenseDetailController({required this.expense, required this.updateExpenses});
 
   Future<void> deleteExpense(BuildContext context) async {
     showDialog(
@@ -37,6 +27,7 @@ class ExpenseDetailController {
               await _dbHelper.deleteExpense(expense.id!);
               Navigator.pop(context);
               Navigator.pop(context); // Pop twice to go back to the previous screen
+              updateExpenses(); // Call the callback function to update expenses
             },
             child: Text('Delete'),
           ),

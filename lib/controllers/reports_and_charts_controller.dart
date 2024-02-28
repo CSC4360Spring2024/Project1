@@ -19,7 +19,7 @@ class ReportsAndChartsController {
     );
   }
 
-  Widget buildCharts(BuildContext context) {
+  Widget buildCharts(BuildContext context, VoidCallback updateExpenses) { // Accept the callback function
     Map<String, double> categoryTotalMap = _calculateCategoryTotal(expenseList);
     List<charts.Series<CategoryTotal, String>> seriesList = [
       charts.Series(
@@ -52,7 +52,7 @@ class ReportsAndChartsController {
                 subtitle: Text(
                     '\$${expense.amount.toStringAsFixed(2)} - ${expense.date.toString()}'),
                 onTap: () {
-                  _navigateToExpenseDetailScreen(context, expense);
+                  _navigateToExpenseDetailScreen(context, expense, updateExpenses); // Pass the callback function
                 },
               );
             },
@@ -62,15 +62,13 @@ class ReportsAndChartsController {
     );
   }
 
-  void _navigateToExpenseDetailScreen(BuildContext context, Expense expense) {
+  void _navigateToExpenseDetailScreen(BuildContext context, Expense expense, VoidCallback updateExpenses) { // Accept the callback function
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ExpenseDetailScreen(expense: expense),
+        builder: (context) => ExpenseDetailScreen(expense: expense, updateExpenses: updateExpenses), // Pass the callback function
       ),
-    ).then((_) {
-      getExpenses();
-    });
+    );
   }
 
   Map<String, double> _calculateCategoryTotal(List<Expense> expenses) {
