@@ -3,8 +3,13 @@
 ## Overview
 Welcome to the Expense Tracker Application project repository! This project aims to develop a user-friendly mobile application that empowers individuals to efficiently track their expenses and manage their budgets effectively. The Expense Tracker Application provides a comprehensive financial management solution by integrating features such as expense categorization, budget goal setting, and visual reporting.
 
+## Group Members:
+● Armaan Hirani
+
+● Sophie Nguyen
+
 ## Project Proposal
-Please refer to the [Project Proposal](https://drive.google.com/file/d/1ZCvng3cCCDchbiO5DMv8Z8BEAj_ptnc5/view?usp=sharing) file for detailed information about the project summary, purpose, target audience, potential benefits to users, tech stack, proposed wireframe, iterative design approach, key features, complexity, and the signed proposal.
+Please refer to the [Project Proposal](https://drive.google.com/file/d/1ZCvng3cCCDchbiO5DMv8Z8BEAj_ptnc5/view?usp=sharing) file for detailed information about the project.
 
 ## Tech Stack
 - **Flutter**: Dart-based framework for building cross-platform mobile applications.
