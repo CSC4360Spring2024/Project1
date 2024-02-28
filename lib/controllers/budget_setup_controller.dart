@@ -3,7 +3,7 @@ import '../database/budget_database_helper.dart';
 import '../models/budget_model.dart';
 
 class BudgetSetupController {
-  final TextEditingController titleController = TextEditingController();
+  String selectedCategory = 'Food'; // Set an initial value
   final TextEditingController amountController = TextEditingController();
   DateTime startDate = DateTime.now();
   DateTime endDate = DateTime.now().add(Duration(days: 30)); // Default to 30 days from now
@@ -34,35 +34,23 @@ class BudgetSetupController {
   }
 
   Future<void> saveBudget(BuildContext context) async {
-    String title = titleController.text;
     double amount = double.parse(amountController.text);
 
     Budget budget = Budget(
-      title: title,
+      category: selectedCategory,
       amount: amount,
       startDate: startDate,
       endDate: endDate,
     );
 
-    try {
-      await dbHelper.insertBudget(budget);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Budget saved successfully'),
-        ),
-      );
-      Navigator.pop(context);
-    } catch (error) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Failed to save budget: $error'),
-        ),
-      );
-    }
-  }
+    await dbHelper.insertBudget(budget);
 
-  void dispose() {
-    titleController.dispose();
-    amountController.dispose();
+    // Clear the text fields after saving
+    amountController.clear();
+    // Reset selected category
+    selectedCategory = 'Food'; // Set it back to the initial value
+
+    // Navigate back to the previous screen
+    Navigator.pop(context);
   }
 }
