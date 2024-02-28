@@ -65,6 +65,6 @@ class BudgetSetupController {
 
   Future<bool> _checkBudgetExceeded(String category, double budgetAmount, DateTime startDate, DateTime endDate) async {
     double totalAmountSpent = await dbExpenseHelper.getTotalAmountSpentForCategory(category, startDate.toString(), endDate.toString());
-    return totalAmountSpent < budgetAmount;
+    return totalAmountSpent > budgetAmount;
   }
 }
