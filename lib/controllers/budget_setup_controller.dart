@@ -7,8 +7,8 @@ import '../utils/dialog_widgets.dart';
 class BudgetSetupController {
   String selectedCategory = 'Food'; // Set an initial value
   final TextEditingController amountController = TextEditingController();
-  DateTime startDate = DateTime.now();
-  DateTime endDate = DateTime.now().add(Duration(days: 30)); // Default to 30 days from now
+  DateTime startDate = DateTime.now().subtract(Duration(days: 30));
+  DateTime endDate = DateTime.now();
   final BudgetDatabaseHelper dbBudgetHelper = BudgetDatabaseHelper();
   final ExpenseDatabaseHelper dbExpenseHelper = ExpenseDatabaseHelper();
 
