@@ -1,6 +1,8 @@
 # Expense Tracker Application
 
-## Tasks: There should be 5 PRs opened
+## Tasks: 
+- There should be 5 PRs opened.
+- Due: Midnight Sunday, 3 March 2024.
 
 ### 1. UI of Dashboard:
 - Implement user-friendly UI for Dashboard.
