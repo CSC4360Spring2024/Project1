@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../expense_entry_screen.dart';
-import '../budget_setup_screen.dart';
-import '../reports_and_charts_screen.dart';
+import '../screens/expense_entry_screen.dart';
+import '../screens/budget_setup_screen.dart';
+import '../screens/reports_and_charts_screen.dart';
 
 class DashboardController {
   static void navigateToExpenseEntry(BuildContext context) {
