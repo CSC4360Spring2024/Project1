@@ -4,10 +4,9 @@ import 'controllers/expense_detail_controller.dart';
 
 class ExpenseDetailScreen extends StatelessWidget {
   final Expense expense;
-  final ExpenseDetailController _controller;
+  final VoidCallback updateExpenses; // Accept the callback function
 
-  ExpenseDetailScreen({required this.expense})
-      : _controller = ExpenseDetailController(expense: expense);
+  ExpenseDetailScreen({required this.expense, required this.updateExpenses});
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +44,8 @@ class ExpenseDetailScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    _controller.navigateToEditExpenseScreen(context);
-                  },
-                  child: Text('Edit'),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    _controller.deleteExpense(context);
+                    ExpenseDetailController(expense: expense, updateExpenses: updateExpenses)
+                        .deleteExpense(context); // Pass the callback function
                   },
                   child: Text('Delete'),
                 ),

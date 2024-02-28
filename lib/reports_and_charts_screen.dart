@@ -28,7 +28,12 @@ class _ReportsAndChartsScreenState extends State<ReportsAndChartsScreen> {
       ),
       body: _controller.expenseList.isEmpty
           ? _controller.buildEmptyState()
-          : _controller.buildCharts(context),
+          : _controller.buildCharts(context, _updateExpenses), // Pass callback function
     );
+  }
+
+  void _updateExpenses() async {
+    await _controller.getExpenses();
+    setState(() {});
   }
 }
