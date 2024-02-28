@@ -7,8 +7,8 @@ import '../utils/dialog_widgets.dart';
 class BudgetSetupController {
   String selectedCategory = 'Food'; // Set an initial value
   final TextEditingController amountController = TextEditingController();
-  DateTime startDate = DateTime.now().subtract(Duration(days: 30));
-  DateTime endDate = DateTime.now();
+  DateTime startDate = DateTime.now();
+  DateTime endDate = DateTime.now().add(Duration(days: 30)); // Default to 30 days from now
   final BudgetDatabaseHelper dbBudgetHelper = BudgetDatabaseHelper();
   final ExpenseDatabaseHelper dbExpenseHelper = ExpenseDatabaseHelper();
 
@@ -49,7 +49,7 @@ class BudgetSetupController {
     await dbBudgetHelper.insertBudget(budget);
 
     // Check if the total amount spent for the selected category exceeds the budget amount
-    bool exceedsBudget = await _checkBudgetExceeded(selectedCategory, amount);
+    bool exceedsBudget = await _checkBudgetExceeded(selectedCategory, amount, startDate, endDate);
 
     if (exceedsBudget) {
       DialogWidgets.showExceedDialog(context, selectedCategory);
@@ -60,11 +60,11 @@ class BudgetSetupController {
     // Clear the text fields after saving
     amountController.clear();
     // Reset selected category
-    selectedCategory = 'Food'; // Set it back to the initial value50
+    selectedCategory = 'Food'; // Set it back to the initial value
   }
 
-  Future<bool> _checkBudgetExceeded(String category, double budgetAmount) async {
-    double totalAmountSpent = await dbExpenseHelper.getTotalAmountSpentForCategory(category);
-    return totalAmountSpent > budgetAmount;
+  Future<bool> _checkBudgetExceeded(String category, double budgetAmount, DateTime startDate, DateTime endDate) async {
+    double totalAmountSpent = await dbExpenseHelper.getTotalAmountSpentForCategory(category, startDate.toString(), endDate.toString());
+    return totalAmountSpent < budgetAmount;
   }
 }

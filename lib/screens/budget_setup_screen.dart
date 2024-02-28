@@ -39,7 +39,7 @@ class _BudgetSetupScreenState extends State<BudgetSetupScreen> {
             TextField(
               controller: _controller.amountController,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Amount'),
+              decoration: InputDecoration(labelText: 'Limit'),
             ),
             SizedBox(height: 16.0),
             Row(

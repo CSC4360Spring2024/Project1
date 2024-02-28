@@ -61,11 +61,12 @@ class ExpenseDatabaseHelper {
     return await db.delete(expenseTable, where: '$colId = ?', whereArgs: [id]);
   }
 
-  Future<double> getTotalAmountSpentForCategory(String category) async {
+  Future<double> getTotalAmountSpentForCategory(
+      String category, String startDate, String endDate) async {
     Database db = await this.database;
     var result = await db.rawQuery(
-        'SELECT SUM($colAmount) AS total FROM $expenseTable WHERE $colCategory = ?',
-        [category]);
+        'SELECT SUM($colAmount) AS total FROM $expenseTable WHERE $colCategory = ? AND $colDate BETWEEN ? AND ?',
+        [category, startDate, endDate]);
 
     // If there are no expenses for the given category, return 0.0
     if (result.first['total'] == null) {
