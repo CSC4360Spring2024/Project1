@@ -21,9 +21,19 @@ class _BudgetSetupScreenState extends State<BudgetSetupScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            TextField(
-              controller: _controller.titleController,
-              decoration: InputDecoration(labelText: 'Title'),
+            DropdownButtonFormField(
+              value: _controller.selectedCategory,
+              hint: Text('Category'),
+              onChanged: (value) {
+                _controller.selectedCategory = value.toString();
+              },
+              items: ['Food', 'Transport', 'Shopping', 'Others']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
             ),
             SizedBox(height: 16.0),
             TextField(
@@ -68,11 +78,5 @@ class _BudgetSetupScreenState extends State<BudgetSetupScreen> {
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 }

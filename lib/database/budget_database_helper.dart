@@ -9,7 +9,7 @@ class BudgetDatabaseHelper {
 
   String budgetTable = 'budget_table';
   String colId = 'id';
-  String colTitle = 'title';
+  String colCategory = 'category';
   String colAmount = 'amount';
   String colStartDate = 'start_date';
   String colEndDate = 'end_date';
@@ -39,7 +39,7 @@ class BudgetDatabaseHelper {
 
   void _createDb(Database db, int newVersion) async {
     await db.execute(
-        'CREATE TABLE $budgetTable($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colTitle TEXT, $colAmount REAL, '
+        'CREATE TABLE $budgetTable($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colCategory TEXT, $colAmount REAL, '
             '$colStartDate TEXT, $colEndDate TEXT)');
   }
 
