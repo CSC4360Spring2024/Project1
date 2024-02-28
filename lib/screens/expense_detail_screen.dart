@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'models/expense_model.dart';
-import 'controllers/expense_detail_controller.dart';
+import '../models/expense_model.dart';
+import '../controllers/expense_detail_controller.dart';
 
 class ExpenseDetailScreen extends StatelessWidget {
   final Expense expense;

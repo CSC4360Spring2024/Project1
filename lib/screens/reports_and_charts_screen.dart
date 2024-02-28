@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'controllers/reports_and_charts_controller.dart';
+import '../controllers/reports_and_charts_controller.dart';
 
 class ReportsAndChartsScreen extends StatefulWidget {
   @override

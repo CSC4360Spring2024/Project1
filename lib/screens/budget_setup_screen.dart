@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'controllers/budget_setup_controller.dart';
+import '../controllers/budget_setup_controller.dart';
 
 class BudgetSetupScreen extends StatefulWidget {
   @override
