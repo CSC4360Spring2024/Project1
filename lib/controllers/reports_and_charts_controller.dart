@@ -3,6 +3,7 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import '../database/expense_database_helper.dart';
 import '../models/expense_model.dart';
 import '../screens/expense_detail_screen.dart';
+import '../utils/category_total.dart';
 
 class ReportsAndChartsController {
   List<Expense> expenseList = [];
@@ -85,11 +86,4 @@ class ReportsAndChartsController {
 
     return categoryTotalMap;
   }
-}
-
-class CategoryTotal {
-  final String category;
-  final double total;
-
-  CategoryTotal(this.category, this.total);
 }
