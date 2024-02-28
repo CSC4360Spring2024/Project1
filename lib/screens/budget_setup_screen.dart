@@ -72,7 +72,7 @@ class _BudgetSetupScreenState extends State<BudgetSetupScreen> {
               onPressed: () {
                 _controller.saveBudget(context);
               },
-              child: Text('Save Budget'),
+              child: Text('Budget Check'),
             ),
           ],
         ),

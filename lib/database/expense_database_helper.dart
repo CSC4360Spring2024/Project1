@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import '../models/expense_model.dart';
@@ -60,5 +59,20 @@ class ExpenseDatabaseHelper {
   Future<int> deleteExpense(int id) async {
     Database db = await this.database;
     return await db.delete(expenseTable, where: '$colId = ?', whereArgs: [id]);
+  }
+
+  Future<double> getTotalAmountSpentForCategory(String category) async {
+    Database db = await this.database;
+    var result = await db.rawQuery(
+        'SELECT SUM($colAmount) AS total FROM $expenseTable WHERE $colCategory = ?',
+        [category]);
+
+    // If there are no expenses for the given category, return 0.0
+    if (result.first['total'] == null) {
+      return 0.0;
+    }
+
+    // Parse the total amount from the result and return it
+    return result.first['total'] as double;
   }
 }
