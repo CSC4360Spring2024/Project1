@@ -25,7 +25,9 @@ class _BudgetSetupScreenState extends State<BudgetSetupScreen> {
               value: _controller.selectedCategory,
               hint: Text('Category'),
               onChanged: (value) {
-                _controller.selectedCategory = value.toString();
+                setState(() {
+                  _controller.selectedCategory = value.toString();
+                });
               },
               items: ['Food', 'Transport', 'Shopping', 'Others']
                   .map<DropdownMenuItem<String>>((String value) {
@@ -47,8 +49,9 @@ class _BudgetSetupScreenState extends State<BudgetSetupScreen> {
                 Text('Start Date: ${DateFormat.yMd().format(_controller.startDate)}'),
                 SizedBox(width: 8.0),
                 ElevatedButton(
-                  onPressed: () {
-                    _controller.selectStartDate(context);
+                  onPressed: () async {
+                    await _controller.selectStartDate(context);
+                    setState(() {});
                   },
                   child: Text('Select Date'),
                 ),
@@ -60,8 +63,9 @@ class _BudgetSetupScreenState extends State<BudgetSetupScreen> {
                 Text('End Date: ${DateFormat.yMd().format(_controller.endDate)}'),
                 SizedBox(width: 8.0),
                 ElevatedButton(
-                  onPressed: () {
-                    _controller.selectEndDate(context);
+                  onPressed: () async {
+                    await _controller.selectEndDate(context);
+                    setState(() {});
                   },
                   child: Text('Select Date'),
                 ),

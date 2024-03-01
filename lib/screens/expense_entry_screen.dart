@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../controllers/expense_entry_controller.dart';
 
-class ExpenseEntryScreen extends StatelessWidget {
+class ExpenseEntryScreen extends StatefulWidget {
+  @override
+  _ExpenseEntryScreenState createState() => _ExpenseEntryScreenState();
+}
+
+class _ExpenseEntryScreenState extends State<ExpenseEntryScreen> {
   final ExpenseEntryController _controller = ExpenseEntryController();
 
   @override
@@ -28,8 +33,9 @@ class ExpenseEntryScreen extends StatelessWidget {
                 SizedBox(width: 8.0),
                 ElevatedButton(
                   child: Text('Select Date'),
-                  onPressed: () {
-                    _controller.selectDate(context);
+                  onPressed: () async {
+                    await _controller.selectDate(context);
+                    setState(() {}); // Update the screen after date selection
                   },
                 ),
               ],
@@ -39,7 +45,9 @@ class ExpenseEntryScreen extends StatelessWidget {
               value: _controller.selectedCategory,
               hint: Text('Category'),
               onChanged: (value) {
-                _controller.selectedCategory = value.toString();
+                setState(() {
+                  _controller.selectedCategory = value.toString();
+                });
               },
               items: ['Food', 'Transport', 'Shopping', 'Others']
                   .map<DropdownMenuItem<String>>((String value) {
