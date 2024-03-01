@@ -10,12 +10,12 @@ class ExpenseEntryController {
   final dbHelper = ExpenseDatabaseHelper();
 
   Future<void> selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
+    final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: selectedDate,
       firstDate: DateTime(2015, 8),
       lastDate: DateTime(2101),
-    ) ?? selectedDate;
+    );
     if (picked != null && picked != selectedDate) {
       selectedDate = picked;
     }
