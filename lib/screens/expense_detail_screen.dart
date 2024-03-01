@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../models/expense_model.dart';
 import '../controllers/expense_detail_controller.dart';
 
@@ -30,7 +31,7 @@ class ExpenseDetailScreen extends StatelessWidget {
             ),
             SizedBox(height: 8.0),
             Text(
-              'Date: ${expense.date.toString()}',
+              'Date: ${DateFormat.yMd().format(expense.date)}',
               style: TextStyle(fontSize: 18.0),
             ),
             SizedBox(height: 8.0),

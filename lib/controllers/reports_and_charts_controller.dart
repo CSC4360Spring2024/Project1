@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:intl/intl.dart';
 import '../database/expense_database_helper.dart';
 import '../models/expense_model.dart';
 import '../screens/expense_detail_screen.dart';
@@ -51,7 +52,7 @@ class ReportsAndChartsController {
               return ListTile(
                 title: Text(expense.category),
                 subtitle: Text(
-                    '\$${expense.amount.toStringAsFixed(2)} - ${expense.date.toString()}'),
+                    '\$${expense.amount.toStringAsFixed(2)} - ${DateFormat.yMd().format(expense.date)}'),
                 onTap: () {
                   _navigateToExpenseDetailScreen(context, expense, updateExpenses); // Pass the callback function
                 },
