@@ -14,12 +14,13 @@ class Dashboard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Welcome",
+              "Welcome to Our Expense Tracker Application",
               style: GoogleFonts.caveat(
                 color: Colors.white,
-                fontSize: 90,
+                fontSize: 50,
                 fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
             ),
           ],
         ),
@@ -44,14 +45,15 @@ class Dashboard extends StatelessWidget {
                   ),
                   side: const BorderSide(
                     width: 2.0,
-                    color: Colors.black, // Adjust the color as needed
+                    color: Colors.black,
                   ),
                 ),
                 child: Text(
                   'Log\nExpense',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.asapCondensed(
+                  style: GoogleFonts.kalam(
                     color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 onPressed: () {
@@ -66,14 +68,15 @@ class Dashboard extends StatelessWidget {
                   ),
                   side: const BorderSide(
                     width: 2.0,
-                    color: Colors.black, // Adjust the color as needed
+                    color: Colors.black,
                   ),
                 ),
                 child: Text(
                   'Budget\nSetup',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.asapCondensed(
+                  style: GoogleFonts.kalam(
                     color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 onPressed: () {
@@ -88,14 +91,15 @@ class Dashboard extends StatelessWidget {
                   ),
                   side: const BorderSide(
                     width: 2.0,
-                    color: Colors.black, // Adjust the color as needed
+                    color: Colors.black,
                   ),
                 ),
                 child: Text(
                   'Reports\nand Charts',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.asapCondensed(
+                  style: GoogleFonts.kalam(
                     color: Colors.black,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 onPressed: () {
