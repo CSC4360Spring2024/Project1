@@ -2,7 +2,6 @@
 
 ## Tasks: 
 - There should be 5 PRs opened.
-- Due: Midnight Sunday, 3 March 2024.
 
 ### 1. UI of Dashboard:
 - Implement user-friendly UI for Dashboard.
@@ -24,7 +23,7 @@
 ### 5. UI of Expense Table in Reports and Charts Screen (Please ignore the charts, I'll take care of them):
 - Implement user-friendly UI of Expense Table in the Reports and Charts Screen.
 - Allow the table to have multiple pages or be scrolled down to deal with hundreds of expenses.
-- Please start with the file named reports_and_charts_controller.dart under 'controllers' directory from line 35-63.
+- Please start with the file named reports_and_charts_controller.dart under 'controllers' directory from line 37-65.
 
 
 
