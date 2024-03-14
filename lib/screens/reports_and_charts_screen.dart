@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../controllers/reports_and_charts_controller.dart';
 
 class ReportsAndChartsScreen extends StatefulWidget {
@@ -24,7 +25,14 @@ class _ReportsAndChartsScreenState extends State<ReportsAndChartsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Reports and Charts'),
+        title: Text(
+          'Reports and Charts',
+          style: GoogleFonts.kalam(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.teal[600],
       ),
       body: _controller.expenseList.isEmpty
           ? _controller.buildEmptyState()
