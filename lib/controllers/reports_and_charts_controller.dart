@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import '../database/expense_database_helper.dart';
 import '../models/expense_model.dart';
@@ -17,58 +18,89 @@ class ReportsAndChartsController {
 
   Widget buildEmptyState() {
     return Center(
-      child: Text('No expenses recorded.'),
+      child: Text(
+        'No expenses recorded',
+        style: GoogleFonts.rubik(
+          color: Colors.black,
+          fontSize: 20,
+        ),
+      ),
     );
   }
 
-  Widget buildCharts(BuildContext context, VoidCallback updateExpenses) { // Accept the callback function
-    Map<String, double> categoryTotalMap = _calculateCategoryTotal(expenseList);
-    List<charts.Series<CategoryTotal, String>> seriesList = [
-      charts.Series(
-        id: 'CategoryTotal',
-        data: categoryTotalMap.entries
-            .map((entry) => CategoryTotal(entry.key, entry.value))
-            .toList(),
-        domainFn: (CategoryTotal categoryTotal, _) => categoryTotal.category,
-        measureFn: (CategoryTotal categoryTotal, _) => categoryTotal.total,
-      )
-    ];
-
-    return Column(
-      children: [
-        SizedBox(
-          height: 300,
+Widget buildCharts(BuildContext context, VoidCallback updateExpenses) {
+  Map<String, double> categoryTotalMap = _calculateCategoryTotal(expenseList);
+  List<charts.Series<CategoryTotal, String>> seriesList = [
+    charts.Series(
+      id: 'CategoryTotal',
+      data: categoryTotalMap.entries
+          .map((entry) => CategoryTotal(entry.key, entry.value))
+          .toList(),
+      domainFn: (CategoryTotal categoryTotal, _) => categoryTotal.category,
+      measureFn: (CategoryTotal categoryTotal, _) => categoryTotal.total,
+    )
+  ];
+  return Column(
+    children: [
+      Padding(
+        padding: EdgeInsets.only(bottom: 50),
+        child: SizedBox(
+          height: 200,
           child: charts.BarChart(
             seriesList,
             animate: true,
             vertical: false,
           ),
         ),
-        Expanded(
-          child: ListView.builder(
-            itemCount: expenseList.length,
-            itemBuilder: (context, index) {
-              Expense expense = expenseList[index];
-              return ListTile(
-                title: Text(expense.category),
+      ),
+      Expanded(
+        child: ListView.builder(
+          itemCount: expenseList.length,
+          itemBuilder: (context, index) {
+            Expense expense = expenseList[index];
+            Color? backgroundColor = Colors.tealAccent[400];
+            return Container(
+              padding: EdgeInsets.all(5),
+              margin: EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+              decoration: BoxDecoration(
+                color: backgroundColor,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black, width: 1),
+              ),
+              child: ListTile(
+                title: Text(
+                  expense.category,
+                  style: GoogleFonts.rubik(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+                ),
                 subtitle: Text(
-                    '\$${expense.amount.toStringAsFixed(2)} - ${DateFormat.yMd().format(expense.date)}'),
+                  '\$${expense.amount.toStringAsFixed(2)} - ${DateFormat.yMd().format(expense.date)}',
+                  style: GoogleFonts.rubik(
+                    color: Colors.black,
+                    fontSize: 15,
+                  ),
+                ),
                 onTap: () {
-                  _navigateToExpenseDetailScreen(context, expense, updateExpenses); // Pass the callback function
+                  _navigateToExpenseDetailScreen(context, expense, updateExpenses);
                 },
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
-      ],
-    );
-  }
+      ),
+    ],
+  );
+}
 
-  void _navigateToExpenseDetailScreen(BuildContext context, Expense expense, VoidCallback updateExpenses) { // Accept the callback function
+
+
+  void _navigateToExpenseDetailScreen(BuildContext context, Expense expense, VoidCallback updateExpenses) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ExpenseDetailScreen(expense: expense, updateExpenses: updateExpenses), // Pass the callback function
+        builder: (context) => ExpenseDetailScreen(expense: expense, updateExpenses: updateExpenses),
       ),
     );
   }
