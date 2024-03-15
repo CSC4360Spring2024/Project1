@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import '../controllers/budget_setup_controller.dart';
+import '../utils/screens_statefulwidgets.dart';
 
-class BudgetSetupScreen extends StatefulWidget {
-  @override
-  _BudgetSetupScreenState createState() => _BudgetSetupScreenState();
-}
-
-class _BudgetSetupScreenState extends State<BudgetSetupScreen> {
+class BudgetSetupScreenState extends State<BudgetSetupScreen> {
   final BudgetSetupController _controller = BudgetSetupController();
 
   @override

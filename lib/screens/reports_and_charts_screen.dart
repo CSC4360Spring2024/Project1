@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../controllers/reports_and_charts_controller.dart';
+import '../utils/screens_statefulwidgets.dart';
 
-class ReportsAndChartsScreen extends StatefulWidget {
-  @override
-  _ReportsAndChartsScreenState createState() => _ReportsAndChartsScreenState();
-}
-
-class _ReportsAndChartsScreenState extends State<ReportsAndChartsScreen> {
+class ReportsAndChartsScreenState extends State<ReportsAndChartsScreen> {
   final ReportsAndChartsController _controller = ReportsAndChartsController();
 
   @override
@@ -45,3 +41,4 @@ class _ReportsAndChartsScreenState extends State<ReportsAndChartsScreen> {
     setState(() {});
   }
 }
+
