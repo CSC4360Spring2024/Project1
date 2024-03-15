@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import '../controllers/expense_entry_controller.dart';
+import '../utils/screens_statefulwidgets.dart';
 
-class ExpenseEntryScreen extends StatefulWidget {
-  @override
-  _ExpenseEntryScreenState createState() => _ExpenseEntryScreenState();
-}
-
-class _ExpenseEntryScreenState extends State<ExpenseEntryScreen> {
+class ExpenseEntryScreenState extends State<ExpenseEntryScreen> {
   final ExpenseEntryController _controller = ExpenseEntryController();
 
   @override
