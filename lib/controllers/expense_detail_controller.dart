@@ -4,7 +4,7 @@ import '../models/expense_model.dart';
 
 class ExpenseDetailController {
   final Expense expense;
-  final VoidCallback updateExpenses; // Callback function for updating expenses
+  final VoidCallback updateExpenses; 
   final ExpenseDatabaseHelper _dbHelper = ExpenseDatabaseHelper();
 
   ExpenseDetailController({required this.expense, required this.updateExpenses});
@@ -12,27 +12,68 @@ class ExpenseDetailController {
   Future<void> deleteExpense(BuildContext context) async {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text('Delete Expense'),
-        content: Text('Are you sure you want to delete this expense?'),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text('Cancel'),
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.tealAccent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            side: BorderSide(
+              color: Colors.black,
+              width: 3.0,
+            ),
           ),
-          TextButton(
-            onPressed: () async {
-              await _dbHelper.deleteExpense(expense.id!);
-              Navigator.pop(context);
-              Navigator.pop(context); // Pop twice to go back to the previous screen
-              updateExpenses(); // Call the callback function to update expenses
-            },
-            child: Text('Delete'),
+          title: const Center(
+            child: Text(
+              'Delete Expense',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
           ),
-        ],
-      ),
+          content: Text(
+            'Are you sure you want to delete this expense?',
+            style: TextStyle(
+              fontSize: 17,
+            ),
+          ),
+          actions: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(
+                    'Cancel',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () async {
+                    await _dbHelper.deleteExpense(expense.id!);
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+                    updateExpenses();
+                  },
+                  child: Text(
+                    'Delete',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      },
     );
   }
 }
