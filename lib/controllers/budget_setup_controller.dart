@@ -8,7 +8,7 @@ class BudgetSetupController {
   String selectedCategory = 'Food'; // Set an initial value
   final TextEditingController amountController = TextEditingController();
   DateTime startDate = DateTime.now().subtract(Duration(days: 30));
-  DateTime endDate = DateTime.now();
+  DateTime endDate = DateTime.now().add(Duration(days: 1));
   final BudgetDatabaseHelper dbBudgetHelper = BudgetDatabaseHelper();
   final ExpenseDatabaseHelper dbExpenseHelper = ExpenseDatabaseHelper();
 
