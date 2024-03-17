@@ -10,7 +10,7 @@ class DialogWidgets {
           return AlertDialog(
             backgroundColor: Colors.tealAccent,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0), // Add border radius
+              borderRadius: BorderRadius.circular(30.0), 
               side: BorderSide(
                 color: Colors.black,
                 width: 3.0,
@@ -20,9 +20,9 @@ class DialogWidgets {
               child: Text(
                 'Budget Exceeded',
                 style: TextStyle(
-                  color: Colors.black, // Change text color
-                  fontWeight: FontWeight.bold, // Change font weight
-                  fontSize: 20, // Change font size
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold, 
+                  fontSize: 20, 
                 ),
               ),
             ),
@@ -41,8 +41,8 @@ class DialogWidgets {
                   child: Text(
                     'OK',
                     style: TextStyle(
-                      color: Colors.black, // Change text color
-                      fontWeight: FontWeight.bold, // Change font weight
+                      color: Colors.black, 
+                      fontWeight: FontWeight.bold, 
                     ),
                   ),
                 ),
@@ -64,7 +64,7 @@ class DialogWidgets {
           return AlertDialog(
             backgroundColor: Colors.tealAccent,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0), // Add border radius
+              borderRadius: BorderRadius.circular(30.0), 
               side: BorderSide(
                 color: Colors.black,
                 width: 3.0,
@@ -74,9 +74,9 @@ class DialogWidgets {
               child: Text(
                 'Budget Not Exceeded',
                 style: TextStyle(
-                  color: Colors.black, // Change text color
-                  fontWeight: FontWeight.bold, // Change font weight
-                  fontSize: 20, // Change font size
+                  color: Colors.black, 
+                  fontWeight: FontWeight.bold, 
+                  fontSize: 20, 
                 ),
               ),
             ),
@@ -95,8 +95,8 @@ class DialogWidgets {
                   child: Text(
                     'OK',
                     style: TextStyle(
-                      color: Colors.black, // Change text color
-                      fontWeight: FontWeight.bold, // Change font weight
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

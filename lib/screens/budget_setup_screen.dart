@@ -95,20 +95,87 @@ class _BudgetSetupScreenState extends State<BudgetSetupScreen> {
               }).toList(),
             ),
             SizedBox(height: 16.0),
-            TextField(
-              controller: _controller.amountController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                labelText: 'Limit',
-                labelStyle: GoogleFonts.rubik(
-                  color: Colors.black,
-                  fontSize: 20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Budget Limit',
+                  style: GoogleFonts.rubik(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
                 ),
-              ),
-              style: GoogleFonts.rubik(
-                color: Colors.black,
-                fontSize: 20,
-              ),
+                SizedBox(width: 8.0),
+                Expanded(
+                  child: TextField(
+                    controller: _controller.amountController,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      labelStyle: GoogleFonts.rubik(
+                        color: Colors.black,
+                        fontSize: 20,
+                      ),
+                    ),
+                    style: GoogleFonts.rubik(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 8.0),
+                IconButton(
+                  icon: Icon(Icons.info),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          backgroundColor: Colors.tealAccent,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0), 
+                            side: BorderSide(
+                              color: Colors.black,
+                              width: 3.0,
+                            ),
+                          ),
+                          title: const Center(
+                            child: Text(
+                              'Note:',
+                              style: TextStyle(
+                                color: Colors.black, 
+                                fontWeight: FontWeight.bold, 
+                                fontSize: 20, 
+                              ),
+                            ),
+                          ),
+                          content: Text(
+                            'Choose your category and input your budget limit to check if you exceed your budget limit for the chosen category and date',
+                            style: TextStyle(
+                              fontSize: 17,
+                            ),
+                          ),
+                          actions: <Widget>[
+                            Center(
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text(
+                                  'OK',
+                                  style: TextStyle(
+                                    color: Colors.black, // Change text color
+                                    fontWeight: FontWeight.bold, // Change font weight
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
+              ],
             ),
             SizedBox(height: 16.0),
             SizedBox(
