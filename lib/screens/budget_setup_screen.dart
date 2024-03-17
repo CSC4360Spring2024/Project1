@@ -145,7 +145,7 @@ class BudgetSetupScreenState extends State<BudgetSetupScreen> {
                             ),
                           ),
                           content: Text(
-                            'Choose your category and input your budget limit to check if you exceed your budget limit for the chosen category and date',
+                            'Choose your category and input your budget limit to check if you exceed your budget limit for the chosen category and date.',
                             style: TextStyle(
                               fontSize: 17,
                             ),
