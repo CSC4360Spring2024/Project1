@@ -16,13 +16,12 @@ Please refer to the [Project Proposal](https://drive.google.com/file/d/1ZCvng3cC
 - **Flutter Charts**: Library for integrating visual charts into Flutter apps.
 - **Git**: Version control system for collaboration and code management.
 - **Code Editors and IDEs**: Visual Studio Code, Android Studio, Xcode, etc.
-- **Testing Frameworks**: XCTest for iOS, Espresso for Android.
 
 ## Project Details
 - [**Google Drive**](https://drive.google.com/drive/folders/1pYyoua2EAXnyyNQ7c07HI2vI_Lqmipje?usp=sharing)
-- [**APK File**](): (update later)
-- [**PowerPoint Presentation**](https://docs.google.com/presentation/d/17WJnkJnWfcXv93oxpsV9CiSMbfw1Va6S/edit?usp=sharing&ouid=115063291951967236235&rtpof=true&sd=true): (just a template so far)
-- [**Youtube Video**](): (update later)
+- [**APK File**](https://drive.google.com/file/d/1ZXaifDQWfazEMJay-Zrwpidu8zI5gUk3/view?usp=sharing)
+- [**PowerPoint Presentation**](https://docs.google.com/presentation/d/17WJnkJnWfcXv93oxpsV9CiSMbfw1Va6S/edit?usp=sharing&ouid=115063291951967236235&rtpof=true&sd=true)
+- [**Youtube Video**](https://drive.google.com/file/d/1TRAXd37U81Oy9Na3JGcBW0vsfE_mPT1_/view?usp=sharing)
 
 ## Key Features
 - **Expense Categorization**: Users can categorize expenses into customizable categories for better organization and analysis.
