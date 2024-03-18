@@ -21,7 +21,7 @@ Please refer to the [Project Proposal](https://drive.google.com/file/d/1ZCvng3cC
 - [**Google Drive**](https://drive.google.com/drive/folders/1pYyoua2EAXnyyNQ7c07HI2vI_Lqmipje?usp=sharing)
 - [**APK File**](https://drive.google.com/file/d/1ZXaifDQWfazEMJay-Zrwpidu8zI5gUk3/view?usp=sharing)
 - [**PowerPoint Presentation**](https://docs.google.com/presentation/d/17WJnkJnWfcXv93oxpsV9CiSMbfw1Va6S/edit?usp=sharing&ouid=115063291951967236235&rtpof=true&sd=true)
-- [**Youtube Video**](https://drive.google.com/file/d/1TRAXd37U81Oy9Na3JGcBW0vsfE_mPT1_/view?usp=sharing)
+- [**Youtube Video**](https://www.youtube.com/watch?v=DWDpwmP1RgM)
 
 ## Key Features
 - **Expense Categorization**: Users can categorize expenses into customizable categories for better organization and analysis.
